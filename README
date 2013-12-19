@@ -1,7 +1,7 @@
-Google APIs Client Library for PHP
-=====================================
+#Google APIs Client Library for PHP
 
-== Description
+
+##Description
 The Google API Client Library enables you to work with Google APIs such as Google+, Drive, Tasks, or Latitude on your server.
 
 Requirements:
@@ -24,17 +24,20 @@ Subscribe to project updates in your feed reader:
 Supported sample applications:
   http://code.google.com/p/google-api-php-client/wiki/Samples
 
-== Basic Example
-  <?php
-  require_once 'path/to/src/Google_Client.php';
-  require_once 'path/to/src/contrib/apiBooksService.php';
+##Basic Example
 
-  $client = new Google_Client();
-  $service = new Google_BooksService($client);
+```php
+<?php
+require_once 'path/to/src/Google_Client.php';
+require_once 'path/to/src/contrib/apiBooksService.php';
 
-  $optParams = array('filter' => 'free-ebooks');
-  $results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
+$client = new Google_Client();
+$service = new Google_BooksService($client);
 
-  foreach ($results['items'] as $item) {
-    print($item['volumeInfo']['title'] . '<br>');
-  }
+$optParams = array('filter' => 'free-ebooks');
+$results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
+
+foreach ($results['items'] as $item) {
+  print($item['volumeInfo']['title'] . '<br>');
+}
+```
